@@ -1,5 +1,5 @@
 pinbook/
 craft_mlt_25k.pth
- yolov8m.pt
- yolov8n.pt
- __pycache__
+yolov8m.pt
+yolov8n.pt
+__pycache__
