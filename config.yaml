@@ -1,0 +1,18 @@
+model:
+  weights: "weights/craft_mlt_25k.pth"
+  confidence_threshold: 0.7
+  refiner_model: "weights/craft_refiner_CTW1500.pth"
+inference:
+  low_text: 0.4
+  link_threshold: 0.4
+  canvas_size: 1280
+  mag_ratio: 1.5
+  poly: false
+  show_time: false
+  refine: false
+  test_folder: "/images/"
+results: "/results/"
+  craft: "./results/craft_results/"
+  yolo: "./results/yolo_results/"
+
+images: "./images/"
