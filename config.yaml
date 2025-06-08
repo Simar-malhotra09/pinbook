@@ -1,7 +1,8 @@
 model:
-  weights: "weights/craft_mlt_25k.pth"
+  weights: "./craft_mlt_25k.pth"
   confidence_threshold: 0.7
   refiner_model: "weights/craft_refiner_CTW1500.pth"
+
 inference:
   low_text: 0.4
   link_threshold: 0.4
@@ -10,9 +11,10 @@ inference:
   poly: false
   show_time: false
   refine: false
-  test_folder: "/images/"
-results: "/results/"
+  test_folder: "./images/"
+
+results:
+  root: "./results/"
   craft: "./results/craft_results/"
   yolo: "./results/yolo_results/"
 
-images: "./images/"
