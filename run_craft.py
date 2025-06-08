@@ -61,7 +61,7 @@ args = parser.parse_args()
 """ For test images in a folder """
 image_list, _, _ = file_utils.get_files(args.test_folder)
 
-result_folder = './result/'
+result_folder = './results/craft_results/'
 if not os.path.isdir(result_folder):
     os.mkdir(result_folder)
 
@@ -156,54 +156,6 @@ if __name__ == '__main__':
 
         # save score text
         filename, file_ext = os.path.splitext(os.path.basename(image_path))
-        mask_file = result_folder + "/res_" + filename + '_mask.jpg'
-        cv2.imwrite(mask_file, score_text)
 
         file_utils.saveResult(image_path, image[:, :, ::-1], polys, dirname=result_folder)
-
-if __name__ == '__main__':
-    # load net
-    net = CRAFT()  # initialize
-
-    print('Loading weights from checkpoint (' + args.trained_model + ')')
-    net.load_state_dict(copyStateDict(torch.load(args.trained_model, map_location='cpu')))
-
-    net.eval()
-
-    # LinkRefiner
-    refine_net = None
-    if args.refine:
-        from refinenet import RefineNet
-        refine_net = RefineNet()
-        print('Loading weights of refiner from checkpoint (' + args.refiner_model + ')')
-        refine_net.load_state_dict(copyStateDict(torch.load(args.refiner_model, map_location='cpu')))
-        refine_net.eval()
-        args.poly = True
-
-    t = time.time()
-
-    # load data
-    for k, image_path in enumerate(image_list):
-        print("Test image {:d}/{:d}: {:s}".format(k+1, len(image_list), image_path), end='\r')
-        image = imgproc.loadImage(image_path)
-
-        bboxes, polys, score_text = test_net(
-            net,
-            image,
-            args.text_threshold,
-            args.link_threshold,
-            args.low_text,
-            cuda=False,
-            poly=args.poly,
-            refine_net=refine_net
-        )
-
-        # save score text
-        filename, file_ext = os.path.splitext(os.path.basename(image_path))
-        mask_file = result_folder + "/res_" + filename + '_mask.jpg'
-        cv2.imwrite(mask_file, score_text)
-
-        file_utils.saveResult(image_path, image[:, :, ::-1], polys, dirname=result_folder)
-
-    print("elapsed time : {}s".format(time.time() - t))
 

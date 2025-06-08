@@ -5,7 +5,7 @@ import os
 CRAFT_RESULTS = "./result/res_book2.txt"
 YOLO_IMAGE_RESULTS = "./yolo_results/result_0.jpg"
 YOLO_TXT_RESULTS = "./yolo_results/result_0.txt"
-OUTPUT_DIR = "./overlay_results"
+OUTPUT_DIR = "./results/overlay_results"
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "book2.jpg")
 
 # Make sure output directory exists
