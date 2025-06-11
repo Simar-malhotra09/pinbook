@@ -1,3 +1,7 @@
+pinbook:
+  root: "~/pinbook/"
+  metadata: "~/pinbook/images/metadata.json"
+
 model:
   weights: "./craft_mlt_25k.pth"
   confidence_threshold: 0.7
@@ -13,8 +17,11 @@ inference:
   refine: false
   test_folder: "./images/"
 
+test:
+  ground_truths: "~/pinbook/ground_truths/ground_truths.csv"
+
 results:
-  root: "./results/"
-  craft: "./results/craft_results/"
-  yolo: "./results/yolo_results/"
+  root: "~/pinbook/results/"
+  craft: "~/pinbook/results/craft_results/"
+  yolo: "~/pinbook/results/yolo_results/"
 
