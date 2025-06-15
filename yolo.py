@@ -15,7 +15,7 @@ from ultralytics import YOLO
 import torch
 import argparse
 from file_utils import get_files
-
+import yaml
 '''
 Convert coordinates in the form of a tensor to txt to log.
 These are in fact what is used to segregate text.
@@ -23,10 +23,10 @@ These are in fact what is used to segregate text.
 
 class Yolo:
 
-    def __init__(self, test_folder: str):
-        self.model = YOLO("yolov8m.pt")
+    def __init__(self, test_folder: str, output_dir:str ):
+        self.model = YOLO("yolo11n-seg.pt")
         self.test_folder = test_folder
-        self.output_dir = "./results/yolo_results"
+        self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
 
     @staticmethod
@@ -73,12 +73,16 @@ class Yolo:
 
 
 
-if __name__ =='__main__':    
+if __name__ =='__main__':   
+    with open("./config.yaml", 'r')as f:
+        config=yaml.safe_load(f)
+
     parser = argparse.ArgumentParser(description='Object Detection & Segmentation with YOLO')
-    parser.add_argument('--test_folder', default='./results/craft_results/', type=str, help='folder path to input images')
+    parser.add_argument('--test_folder', default=os.path.expanduser(config["inference"]["test_folder"]), type=str, help='folder path to input images')
+    parser.add_argument('--output_dir', default=os.path.expanduser(config["results"]["yolo"]), type=str, help='folder path to input images')
     args= parser.parse_args()
 
-    yolo= Yolo(args.test_folder)
+    yolo= Yolo(args.test_folder, args.output_dir)
     yolo.run()
 
 
