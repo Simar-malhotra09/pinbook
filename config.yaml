@@ -24,4 +24,5 @@ results:
   root: "~/pinbook/results/"
   craft: "~/pinbook/results/craft_results/"
   yolo: "~/pinbook/results/yolo_results/"
-
+  yolo_greyscale: "~/pinbook/results/yolo_results/greyscale/"
+  overlay: "~/pinbook/results/overlay_results/"
