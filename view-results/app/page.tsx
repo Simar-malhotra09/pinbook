@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center p-50">
-        <div className="flex w-full max-w-6xl border">
+        <div className="flex w-full max-w-10xl border">
           <ImageTextViewer id={current[0]} />
         </div>
         <div className="mt-4 flex gap-4 items-center">

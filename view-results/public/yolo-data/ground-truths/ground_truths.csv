@@ -1,0 +1,7 @@
+label_name,bbox_x,bbox_y,bbox_width,bbox_height,image_name,image_width,image_height
+book,88,45,523,637,book1.png,736,736
+book,119,423,209,324,book2.jpg,735,980
+book,406,422,213,318,book2.jpg,735,980
+book,106,222,515,767,book3.jpg,736,1168
+book,23,24,341,547,book4.jpg,381,601
+book,27,21,434,721,book5.jpg,481,768
