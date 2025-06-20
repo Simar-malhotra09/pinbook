@@ -1,6 +1,6 @@
 ## 📌 CRAFT Text Localization Results
 
-<img src="result/craft_results/book2.jpg" width="400"/>  
+<img src="results/craft_results/book2.jpg" width="400"/>  
 
 
 
