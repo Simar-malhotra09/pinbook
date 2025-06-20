@@ -11,6 +11,6 @@
 
 ## Compare model results & ground truth
 
-<img src= "results-viewer.png" width="400"/>
+<img src= "results-viewer.png" width="1200"/>
 
 
