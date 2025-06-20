@@ -9,8 +9,8 @@
 
 <img src="results/yolo_results/yolo_book2.jpg" width="400"/>
 
-## Compare model results & ground truth
+## ✅ Compare model results & ground truth
 
-<img src= "results-viewer.png" width="1200"/>
+<img src= "results-viewer.png" width="2400"/>
 
 
